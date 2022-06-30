@@ -1,12 +1,12 @@
 import Address from "./entity/address";
 import Customer from "./entity/customer";
 import Order from "./entity/order";
-import OrderItem from "./entity/orderItem";
+import OrderItem from "./entity/order_item";
 
 const customer = new Customer("1", "Pedro Henrique");
 const address = new Address("Rua dois", 1, "12345-678", "Recife");
 
-customer.address = address;
+customer.Address = address;
 customer.activate();
 
 
