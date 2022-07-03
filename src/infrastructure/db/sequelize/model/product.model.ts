@@ -14,6 +14,6 @@ export default class ProductModel extends Model {
     declare name: string;
 
     @Column({ allowNull: false })
-    declare price: false;
+    declare price: number;
 
 }
