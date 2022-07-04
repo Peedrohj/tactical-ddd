@@ -1,7 +1,6 @@
-import Address from './address';
+import Address from "./address";
 
 export default class Customer {
-
     private _id: string;
     private _name: string = "";
     private _address!: Address;
@@ -40,6 +39,14 @@ export default class Customer {
         this.validate();
     }
 
+    get address(): Address {
+        return this._address;
+    }
+
+    changeAddress(address: Address) {
+        this._address = address;
+    }
+
     isActive(): boolean {
         return this._active;
     }
@@ -62,4 +69,4 @@ export default class Customer {
     set Address(address: Address) {
         this._address = address;
     }
-} 
+}
