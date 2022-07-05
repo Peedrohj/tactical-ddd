@@ -26,6 +26,10 @@ export default class Order {
         return this._items
     }
 
+    addItem(value: OrderItem) {
+        return this._items.push(value)
+    }
+
     validate(): boolean {
         if (this._id.length === 0) {
             throw new Error("Id is required");
