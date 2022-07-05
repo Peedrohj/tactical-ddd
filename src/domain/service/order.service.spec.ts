@@ -11,7 +11,7 @@ describe("Order service unit tests", () => {
         const order = new Order("o1", "c1", [item1]);
         const order2 = new Order("o2", "c1", [item2]);
 
-        expect(OrderService.total([order, order2])).toBe(500);
+        expect(OrderService.total([order, order2])).toBe(300);
     });
 
     it("should place an order", () => {
