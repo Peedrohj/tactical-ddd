@@ -23,7 +23,8 @@
 		"eg2.vscode-npm-script",
 		"Orta.vscode-jest",
 		"vivaxy.vscode-conventional-commits",
-		"ms-vscode.vscode-typescript-next"
+		"ms-vscode.vscode-typescript-next",
+		"esbenp.prettier-vscode"
 	],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
