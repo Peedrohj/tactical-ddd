@@ -71,7 +71,7 @@ describe("Customer repository test", () => {
         const customerRepository = new CustomerRepository();
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "Zipcode 1", "City 1");
-        customer.Address = address;
+        customer.changeAddress(address);
         
         await customerRepository.create(customer);
         const customerResult = await customerRepository.find(customer.id);
