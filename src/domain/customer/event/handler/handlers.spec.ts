@@ -1,4 +1,4 @@
-import Address from "../../entity/address";
+import Address from "../../value-object/address";
 import EventDispatcher from "../../../event/@shared/event-dispatcher";
 import CustomerAddressChangedEvent from "../customer-adrress-changed.event";
 import CustomerCreatedEvent from "../customer-created.event";
