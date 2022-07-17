@@ -1,5 +1,5 @@
-import Order from "../../domain/entity/order";
-import OrderItem from "../../domain/entity/order_item";
+import Order from "../../domain/checkout/order";
+import OrderItem from "../../domain/checkout/order_item";
 import OrderRepositoryInterface from "../../domain/repository/order-repository.interface";
 import OrderItemModel from "../db/sequelize/model/order-item.model";
 import OrderModel from "../db/sequelize/model/order.model";
@@ -11,7 +11,7 @@ export default class OrderRepository implements OrderRepositoryInterface {
                 id: entity.id,
                 customer_id: entity.customerId,
                 total: entity.total(),
-                items: entity.items.map((item) => ({
+                items: entity.items.map((item: OrderItem) => ({
                     id: item.id,
                     name: item.name,
                     price: item.price,
@@ -31,7 +31,7 @@ export default class OrderRepository implements OrderRepositoryInterface {
                 where: { order_id: entity.id },
                 transaction: t,
             });
-            const items = entity.items.map((item) => ({
+            const items = entity.items.map((item: OrderItem) => ({
                 id: item.id,
                 name: item.name,
                 price: item.price,
@@ -59,7 +59,7 @@ export default class OrderRepository implements OrderRepositoryInterface {
             rejectOnEmpty: true,
         });
 
-        const items = orderModel.items.map((item) => {
+        const items = orderModel.items.map((item: OrderItemModel) => {
             const orderItem = new OrderItem(
                 item.id,
                 item.name,
@@ -81,7 +81,7 @@ export default class OrderRepository implements OrderRepositoryInterface {
                 new Order(
                     orderModel.id,
                     orderModel.customer_id,
-                    orderModel.items.map((item) => {
+                    orderModel.items.map((item: OrderItemModel) => {
                         return new OrderItem(
                             item.id,
                             item.name,
