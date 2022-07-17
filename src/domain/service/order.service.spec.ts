@@ -1,7 +1,7 @@
 import Customer from "../entity/customer";
-import OrderItem from "../checkout/order_item";
+import OrderItem from "../checkout/entity/order_item";
 import OrderService from "./order.service";
-import Order from "../checkout/order";
+import Order from "../checkout/entity/order";
 
 describe("Order service unit tests", () => {
     it("should get total of all orders", () => {
