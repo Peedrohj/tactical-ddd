@@ -1,10 +1,10 @@
-import Address from "../../../entity/address";
-import Customer from "../../../entity/customer";
-import EventDispatcher from "../../@shared/event-dispatcher";
+import Address from "../../entity/address";
+import EventDispatcher from "../../../event/@shared/event-dispatcher";
 import CustomerAddressChangedEvent from "../customer-adrress-changed.event";
 import CustomerCreatedEvent from "../customer-created.event";
 import SendEmailWhenAddresIsChanged from "./send-email-when-address-is-changed.handler";
 import SendEmailWhenCustomerIsCreated from "./send-email-when-customer-is-created.handler";
+import Customer from "../../entity/customer";
 
 describe("Customer Handlers tests", () => {
     it("should notify all event handlers when customer is created", () => {
